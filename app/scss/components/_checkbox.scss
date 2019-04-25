@@ -8,6 +8,7 @@
 	margin-bottom: 0;
 	font-weight: 400;
 	flex-grow: 1;
+	position: relative;
 	.check-box {
 		position: absolute;
 		margin-left: -1rem;
@@ -16,6 +17,8 @@
 		border: 2px solid $dark-grey;
 		border-radius: 4px;
 		color: $dark-grey;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 	.check-input {
 		position: absolute;
