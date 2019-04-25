@@ -1,0 +1,135 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to forms of the site/application.
+// -----------------------------------------------------------------------------
+.forms-group {
+	padding: 15px;
+	background-color: rgba($dark-grey, 0.3);
+	border-radius: 4px;
+	.top-group {
+		margin-bottom: 10px;
+		@media screen and (max-width: 767px) {
+			.input-group {
+				flex-wrap: wrap;
+				.form-top-left {
+					border-radius: 4px;
+				}
+				.datepicker-wrapper {
+					width: 100%;
+					border-top: 1px solid $light-grey;
+					border-radius: 4px;
+					overflow: hidden;
+				}
+				@media screen and (max-width: 369px) {
+					.input-group-addon {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 351px) {
+		background-color: transparent;
+	}
+}
+
+.input-group {
+	display: flex;
+	min-height: 50px;
+	position: relative;
+    background: #fff;
+    border-radius: 4px;
+	input {
+		height: auto;
+		border: 0;
+		font-size: 1rem;
+		color: $mid-grey;
+		padding: 10px;
+		flex-grow: 1;
+		&.form-top-left {
+			border-right: 1px solid $light-grey;
+		}
+	}
+	.input-group-addon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 30px;
+		border: 0;
+		background-color: #fff;
+		img {
+			max-width: initial;
+			height: 15px;
+		}
+		&#map-pin {
+			img {
+				height: 20px;
+			}
+		}
+		.fa {
+			font-size: 1.25rem;
+			color: $dark-grey;
+		}
+	}
+}
+
+.bottom-group {
+	display: flex;
+	align-items: center;
+    max-height: 50px;
+	.input-group {
+		flex-grow: 1;
+		.input-group-addon {
+			padding-right: 40px;
+		}
+		@media screen and (max-width: 485px) {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 4px;
+		}
+	}
+	.btn-search-wrapper {
+		margin-left: 10px;
+		position: relative;
+		pointer-events: pointer;
+		&:before {
+			content: '\f002';
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-55%);
+			color: #fff;
+			font-family: fontawesome;
+			font-size: 1.2rem;
+			transition: 0.2s all linear;
+			pointer-events: none;
+		}
+		&:hover {
+	    	&:before {
+	    		color: $brand-color;
+	    	}
+	    }
+	}
+	@media screen and (max-width: 351px) {
+		flex-wrap: wrap;
+		.input-group {
+			margin-bottom: 10px;
+			padding-left: 50px;
+			.input-group-addon {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+		.btn-search-wrapper {
+			width: 100%;
+			margin-left: 0;
+			&:before {
+				left: calc(50% - 30px);
+			}
+			.btn-search {
+				width: 100%;
+			}
+		}
+	}
+}

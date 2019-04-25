@@ -1,0 +1,252 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigations of the site/application.
+// -----------------------------------------------------------------------------
+
+// main-menu
+.header-top {
+	@media screen and (max-width: 767px) {
+		nav {
+			text-align: right;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			overflow: hidden;
+		}
+	}
+}
+.main-menu {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	align-items: center;
+	justify-content: flex-end;
+	.main-menu-item {
+		margin-left: 37px;
+		@media screen and (max-width: 767px) {
+			margin-left: 0;
+		}
+		.main-menu-link {
+			text-transform: uppercase;
+			font-family: nexa;
+			font-size: 0.8125rem;
+		}
+		&:last-child {
+			a {
+				padding: 8px 13px;
+				border-radius: 100px;
+				background-color: $brand-color;
+				transition: 0.2s linear all;
+				border: 2px solid transparent;
+				display: flex;
+				align-items: center;
+				span {
+					padding: 1px 5px;
+					margin-left: 5px;
+					border-radius: 100px;
+					color: #fff;
+					background-color: #f35f52;
+					font-size: 0.6875rem;
+					font-family: opensans;
+					font-weight: bold;
+				}
+				&:hover, &:focus {
+					color: $brand-color;
+					text-decoration: none;
+					background-color: transparent;
+					border-color: $brand-color;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+		transform: translateY(-100%);
+	    transition: transform .3s ease-out;
+	    position: relative;
+	    top: 0;
+	    right: 0;
+	    padding: 15px 35px;
+	    transform-origin: top center;
+	    background-color: rgba(38,38,38,.8);
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    li {
+	    	margin: 0 0 5px 0;
+	    }
+	}
+}
+.burger {
+	display: none;
+	margin-left: auto;
+	@media screen and (max-width: 767px) {
+		display: block;
+	    width: 40px;
+	    height: 35px;
+	    cursor: pointer;
+		position: relative;
+	    &:before, &:after {
+			content: '';
+			color: $brand-color;
+			background: $brand-color;
+			width: 30px;
+			height: 5px;
+			left: 5px;
+			position: absolute;
+			border-radius: 3px;
+			transform: rotate(0deg);
+			transition: transform .3s ease-out, box-shadow .2s ease-out;
+	    }
+	    &:before {
+			top: 5px;
+			box-shadow: 0 10px 0 0 $brand-color;
+			transform-origin: top left;
+	    }
+	    &:after {
+			bottom: 5px;
+			transform-origin: bottom left;
+	    }
+	    &.active {
+	    	&:before {
+				transform: rotate(45deg);
+				box-shadow: 0 0 0 0 $brand-color;
+	    	}
+	    	&:after {
+				transform: rotate(-45deg);
+	    	}
+
+	    	& + nav .main-menu {
+	    		transform: translateY(0);
+	    		z-index: 2;
+
+	    	}
+	    }
+	}
+}
+
+
+//footer menus
+.footer-menu {
+	display: flex;
+	padding: 0;
+    list-style-type: none;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 0.5px solid #4c4c4c;
+    .footer-menu-item {
+    	padding-right: 3%;
+			flex-grow: 1;
+    	text-align: left;
+    	.footer-menu-link {
+    		font-family: nexa;
+    		text-transform: uppercase;
+    		font-size: 0.8125rem;
+    	}
+    	.select-wrapper {
+    		position: relative;
+    		&:after {
+    			position: absolute;
+    			content: "\f107";
+    			right: 8px;
+    			top: 50%;
+    			transform: translateY(-40%);
+				font-family: fontawesome;
+				pointer-events: none;
+    		}
+    		select {
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				appearance: none;
+				border: 0;
+				background-color: $dark-grey;
+				font-family: nexa;
+	    		text-transform: uppercase;
+	    		font-size: 0.8125rem;
+	    		position: relative;
+	    		padding-right: 15px;
+	    		outline: 0;
+	    		width: 100%;
+	    		cursor: pointer;
+	    		&:hover {
+	    			text-decoration: underline;
+	    			pointer-events: auto;
+	    		}
+				option {
+					font-family: nexa;
+		    		text-transform: uppercase;
+		    		font-size: 0.8125rem;
+		    		&:hover {
+						background-color: $brand-color;
+						color: red;
+		    		}
+				}
+			}
+			select::-ms-expand {
+				display: none;
+			}
+    	}
+		&:last-child {
+			padding-right: 0;
+			text-align: right;
+    		a {
+    			color: $brand-color;
+    		}
+    	}
+    }
+    @media screen and (max-width: 767px) {
+    	flex-wrap: wrap;
+		.footer-menu-item {
+			flex-grow: 0;
+			width: 25%;
+			text-align: left;
+			&:last-child {
+				text-align: left;
+			}
+			.select-wrapper {
+				&:after {
+					left: 50%;
+				}
+			}
+		}
+    }
+    @media screen and (max-width: 459px) {
+		.footer-menu-item {
+			width: 50%;
+			text-align: left;
+			&:nth-child(2n) {
+				text-align: right;
+			}
+			&:last-child {
+				padding-right: 10px;
+			}
+		}
+    }
+}
+.footer-nav-bottom {
+	display: flex;
+	 @media screen and (max-width: 459px) {
+	 	flex-wrap: wrap;
+	 	.footer-submenu, .social {
+	 		width: 100%;
+	 		justify-content: center;
+	 	}
+	 	.footer-submenu {
+	 		margin-bottom: 10px;
+	 	}
+	 }
+}
+.footer-submenu {
+	display: flex;
+	flex-grow: 1;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	.footer-submenu-item {
+		padding-right: 30px;
+		.footer-submenu-link {
+			color: $mid-grey;
+			font-size: 0.8125rem;
+		}
+	}
+}
+

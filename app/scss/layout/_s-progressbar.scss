@@ -1,0 +1,145 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the s-progressbar of the site/application.
+// -----------------------------------------------------------------------------
+
+.s-progressbar {
+	padding: 40px 0;
+	.progressbar-wrapper {
+		display: flex;
+		overflow: hidden;
+		.step {
+			position: relative;
+			flex: 1 0 0;
+			text-align: center;
+			&.step-active {
+				z-index: 1;
+				.circle {
+					background-color: $brand-color;
+				}
+				&:before {
+					position: absolute;
+					content: '';
+					right: 50%;
+					width: 1000%;
+					height: 3px;
+					background-color: $brand-color;
+					top: 7.5px;
+					z-index: -1;
+					border-radius: 3px;
+				}
+			}
+			&:before {
+				position: absolute;
+				content: '';
+				right: 0;
+				width: 1000%;
+				height: 3px;
+				background-color: $light-grey;
+				top: 7.5px;
+				z-index: -1;
+				border-radius: 3px;
+			}
+			&:first-child {
+				transform: translateX(-28%);
+			}
+			&:nth-child(2) {
+				transform: translateX(-10%);
+				&:before {
+					z-index: -2;
+				}
+			}
+			&:nth-child(3) {
+				transform: translateX(10%);
+				&:before {
+					z-index: -3;
+				}
+			}
+			&:nth-child(4) {
+				&:before {
+					z-index: -4;
+				}
+			}
+			&:last-child {
+				transform: translateX(28%);
+				&:before {
+					right: 0;
+				}
+
+			}
+			.circle {
+				padding: 7px;
+				border-radius: 50%;
+				background-color: transparent;
+				display: inline-block;
+			}
+			.title {
+			    color: #000;
+			    font-family: nexa;
+			    text-transform: uppercase;
+			    font-size: 1.375rem;
+			    display: block;
+			    text-align: center;
+			    margin-top: 10px;
+				.subtitle {
+					display: block;
+					color: $mid-grey;
+					font-family: opensans;
+					font-weight: 700;
+					font-size: 0.75rem;
+					text-transform: none;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 1.1rem;
+				}
+			}
+		}
+		@media screen and (max-width: 991px) {
+			.step {
+				&:first-child {
+					transform: translateX(-20%);
+				}
+				&:last-child {
+					transform: translateX(20%);
+				}
+			}
+		}
+		@media screen and (max-width: 560px) {
+			.step {
+				&:first-child {
+					transform: translateX(-5%);
+				}
+				&:nth-child(2) {
+					transform: translateX(5%);
+				}
+				&:nth-child(3) {
+					transform: translateX(-5%);
+				}
+				&:last-child {
+					transform: translateX(5%);
+				}
+			}
+		}
+		@media screen and (max-width: 420px) {
+			.step {
+				&:first-child {
+					transform: translateX(0);
+				}
+				&:nth-child(2) {
+					transform: translateX(0);
+				}
+				&:nth-child(3) {
+					transform: translateX(0);
+				}
+				&:last-child {
+					transform: translateX(0);
+				}
+				.title {
+					font-size: 0.85rem;
+					.subtitle {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

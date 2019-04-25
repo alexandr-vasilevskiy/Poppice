@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the datepicker component.
+// -----------------------------------------------------------------------------
+
+.datepicker-wrapper {
+	display: flex;
+	width: 30%;
+	position: relative;
+	&:before, &:after {
+		position: absolute;
+		content: '\f073';
+		font-family: fontawesome;
+		font-size: 1.25rem;
+		top: 50%;
+		left: 20px;
+		transform: translateY(-50%);
+		color: $dark-grey;
+		pointer-events: none;
+	}
+	&:after {
+		content: '\f0d7';
+		right: 15px;
+		left: auto;
+	}
+	.form-top-right {
+		color: $dark-grey;
+		padding-left: 65px;
+	    border-radius: 0 4px 4px 0;
+	    width: 100%;
+		&::-webkit-input-placeholder {
+			color: $dark-grey;
+		}
+		&::-moz-placeholder {
+			color: $dark-grey;
+		}
+		&:-ms-input-placeholder {
+			color: $dark-grey;
+		}
+		&:-moz-placeholder {
+			color: $dark-grey;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+.ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-prev {
+	cursor: pointer;
+	&:after {
+		content: "\f061";
+		position: absolute;
+		font-family: fontawesome;
+		font-size: 1rem;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+.ui-datepicker .ui-datepicker-prev {
+	&:after {
+		content: "\f060";
+	}
+}

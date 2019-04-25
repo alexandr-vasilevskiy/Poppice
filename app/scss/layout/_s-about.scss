@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the s-about of the site/application.
+// -----------------------------------------------------------------------------
+
+.s-about {
+	background-color: $info-color;
+	padding: 155px 0 105px;
+	.img-wrapper {
+		@media screen and (max-width: 991px) {
+			text-align: center;
+		}
+		
+	}
+	.h2 {
+		text-align: center;
+		padding-top: 50px;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 1.25rem;
+		word-wrap: break-word;
+		-moz-hyphens: auto;
+	    -webkit-hyphens: auto;
+	    -ms-hyphens: auto;
+	}
+	@media screen and (max-width: 485px) {
+		padding: 70px 0;
+	}
+}

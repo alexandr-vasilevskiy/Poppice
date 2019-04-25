@@ -1,0 +1,123 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the s-testimonials of the site/application.
+// -----------------------------------------------------------------------------
+
+.s-products {
+	background-color: $light-grey;
+	padding: 55px 0;
+	.h2 {
+		text-align: center;
+		margin-bottom: 60px;
+		margin-top: 0;
+		font-size: 2rem;
+	}
+	.products-grid {
+		display: flex;
+		.product-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: stretch;
+			color: $dark-grey;
+			background-color: $text-color;
+			border-radius: 4px 4px 0 0;
+    		overflow: hidden;
+    		margin: 0 12px;
+    		width: calc(25% - 24px);
+			.img-wrapper {
+				position: relative;
+				width: 100%;
+				margin-bottom: 45px;
+				&:after {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					width: 60px;
+					height: 60px;
+					background: url('../img/product-label-1.png');
+					z-index: 1;
+					transform: translate(-50%, -50%);
+				}
+				img {
+					width: 100%;
+				}
+			}
+			.content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-bottom: 1px solid $light-grey;
+				padding: 0 15px 25px 15px;
+				margin-bottom: 15px;
+				width: 100%;
+				flex-grow: 1;
+				.title {
+					font-size: 1.125rem;
+					font-weight: 700;
+					color: $brand-color;
+					text-align: center;
+				}
+				.address {
+					font-size: 0.95rem;
+					text-align: center;
+				}
+				.location {
+					font-size: 0.6875rem;
+					color: $mid-grey;
+					text-align: center;
+				}
+			}
+			.price {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.cost {
+					font-size: 1.375rem;
+					font-weight: 700;
+				}
+				.timme {
+					color: $mid-grey;
+					font-size: 0.75rem;
+				}
+				.btn-wrapper {
+					margin: 12px 0 25px;
+				}
+			}
+			&:nth-child(2) {
+				.img-wrapper {
+					&:after {
+						background: url('../img/product-label-2.png');
+					}
+				}
+			}
+			&:nth-child(3) {
+				.img-wrapper {
+					&:after {
+						background: url('../img/product-label-3.png');
+					}
+				}
+			}
+			&:nth-child(4) {
+				.img-wrapper {
+					&:after {
+						background: url('../img/product-label-4.png');
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 1046px) {
+			flex-wrap: wrap;
+			.product-item {
+				width: calc(50% - 24px);
+				margin-bottom: 20px;
+			}		
+    	}
+    	@media screen and (max-width: 540px) {
+			.product-item {
+				width: 100%;
+				margin-bottom: 35px;
+			}
+    	}	
+	}
+}

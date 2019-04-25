@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the carousel component.
+// -----------------------------------------------------------------------------
+
+.testimonials-carousel {
+	position: relative;
+	.testimonials-carousel-item {
+		.text-wrapper {
+			border-bottom: 3px solid $text-color;
+		    margin: 20px 3px;
+		    z-index: 1;
+		    .border-wrapper {
+		    	position: relative;
+		    	z-index: 2;
+	    	    padding-bottom: 35px;
+		    	&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 5px;
+					bottom: 0;
+					left: 0;
+					background-color: transparent;
+					border-right: 3px solid $text-color;
+					border-left: 3px solid $text-color;
+					z-index: -1;
+			    }
+			    &:before {
+					content: '';
+					position: absolute;
+					height: 15px;
+					width: 3.33px;
+					background-color: #fff;
+					top: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					z-index: -1;
+			    }
+		    	p {
+					text-align: center;
+					font-size: 1.125rem;
+					margin: 0;
+				}
+		    }
+		}
+		.user-wrapper {
+			padding: 15px 0;
+			display: flex;
+		    flex-direction: column;
+		    align-items: center;
+			.img-wrapper {
+				max-width: 100px;
+				margin-bottom: 10px;
+			}
+			.name {
+				font-weight: 700;
+				font-size: 1rem;
+				margin-bottom: 5px;
+			}
+			.title {
+				font-size: 0.875rem;
+			}
+		}
+	}
+	.owl-nav {
+		&.disabled {
+			display: block;
+			position: absolute;
+			top: 30%;
+			width: 100%;
+			left: 0;
+			.owl-prev, .owl-next {
+				position: absolute;
+				width: 70px;
+				// &:focus {
+				// 	display: none;
+				// }
+			}
+			.owl-prev {
+				right: calc(100% + 25px);
+				transform: rotate(180deg);
+			}
+			.owl-next {
+				left: calc(100% + 25px);
+			}
+		}
+		@media screen and (max-width: 1149px) {
+			display: none;
+		}	
+	}
+}

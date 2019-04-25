@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+@import "../abstracts/_mixins";
+
+@include font-face("opensans", "../fonts/OpenSans-Regular/OpenSans-Regular");
+@include font-face("opensans", "../fonts/OpenSans-Bold/OpenSans-Bold", bold);
+@include font-face("opensans", "../fonts/OpenSans-SemiBold/OpenSans-SemiBold", 600);
+
+@include font-face("brandon", "../fonts/brandon_bld/brandon_bld", bold);
+@include font-face("brandon", "../fonts/brandon_med/brandon_med");
+
+@include font-face("nexa", "../fonts/Nexa-Heavy/Nexa-Heavy");
